@@ -11,7 +11,5 @@ import lombok.ToString;
 @ToString
 
 public class  AuthResponseDTO {
-
     String token;
-
 }

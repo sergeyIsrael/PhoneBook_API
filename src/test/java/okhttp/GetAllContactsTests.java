@@ -11,9 +11,7 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-public class GetAllContacts {
-
-//    method GET
+public class GetAllContactsTests {
 
     //  объект для Доступа к методам
     Gson gson = new Gson();

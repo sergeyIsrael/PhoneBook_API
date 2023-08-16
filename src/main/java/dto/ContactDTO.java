@@ -12,14 +12,6 @@ import lombok.ToString;
 
 public class ContactDTO {
 
-//          "id": "string",
-//                  "name": "string",
-//                  "lastName": "string",
-//                  "email": "string",
-//                  "phone": "845838615655",
-//                  "address": "string",
-//                  "description": "string"
-
     String id;
     String name;
     String lastName;

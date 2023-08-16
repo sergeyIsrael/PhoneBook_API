@@ -14,10 +14,10 @@ import java.io.IOException;
 public class LoginTests {
 
 //  MediaType - okhttp3 выбирай.
-//    Задали стандарт как мы будем обмениваться с сервером
+//  Задали стандарт как мы будем обмениваться с сервером
     public static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
 
-//  объект для Доступа к методам
+//  объекты для Доступа к методам
     Gson gson = new Gson();
     OkHttpClient client = new OkHttpClient();
 
@@ -29,18 +29,18 @@ public class LoginTests {
                 .password("Ss34567$")
                 .build();
 
-//        Конвертируем данные выше в формат json для передачи на Сервер. JSON Это 16-я строка.
+//        Конвертируем данные выше в формат json для передачи на Сервер. JSON Это 18-я строка.
 //        Создали тело запроса
         RequestBody requestBody = RequestBody.create(gson.toJson(requestDTO), JSON);
 
-//        Сам запрос
+//        Сформировали запрос
         Request request = new Request.Builder()
                 .url("https://contactapp-telran-backend.herokuapp.com/v1/user/login/usernamepassword")
                 .post(requestBody)
                 .build();
 
 //        Ответ от сервера
-//        Здесь посылается Наш request на сервер и его ответ сохраняеется в response
+//        Здесь -посылается наш request на сервер    и его ответ сохраняеется в response
         Response response = client.newCall(request).execute();
 
 //        Переводим ответ сервера обратно в java формат
@@ -61,4 +61,5 @@ public class LoginTests {
     }
 }
 
+// token
 //  eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwic3ViIjoic2VyZ2VpMUBtYWlsLmNvbSIsImlzcyI6IlJlZ3VsYWl0IiwiZXhwIjoxNjkyNTkwMTcxLCJpYXQiOjE2OTE5OTAxNzF9.ATQS6pmDdYP7Lk3PXa787tfIXsE0wT9P804IAU5F7ME
